@@ -32,19 +32,19 @@
             <!-- configurations part start -->
             <div class="mt-5">
               <h4>Memory</h4>
-              <button type="button" class="btn btn-outline-dark">8GB unified memory</button>
-              <button type="button" class="btn btn-outline-dark">16GB unified memory</button>
+              <button id="memory1" type="button" class="btn btn-outline-dark">8GB unified memory</button>
+              <button id="memory2" type="button" class="btn btn-outline-dark">16GB unified memory</button>
             </div>
             <div class="mt-5">
               <h4>Storage</h4>
-              <button type="button" class="btn btn-outline-dark">256GB SSD storage</button>
-              <button type="button" class="btn btn-outline-dark">512GB SSD storage</button>
-              <button type="button" class="btn btn-outline-dark">1TB SSD storage</button>
+              <button id="storage1" type="button" class="btn btn-outline-dark">256GB SSD storage</button>
+              <button id="storage2" type="button" class="btn btn-outline-dark">512GB SSD storage</button>
+              <button id="storage3" type="button" class="btn btn-outline-dark">1TB SSD storage</button>
             </div>
             <div class="mt-5">
               <h4>Choose your delivery option</h4>
-              <button type="button" class="btn btn-outline-dark">Friday, Aug 25 FREE Prime Delivery </button>
-              <button type="button" class="btn btn-outline-dark">Friday, Aug 21 Delivery charge $20 </button>
+              <button id="delivery1" type="button" class="btn btn-outline-dark mt-2">Friday, Aug 25 FREE Prime Delivery </button>
+              <button id="delivery2" type="button" class="btn btn-outline-dark mt-2">Friday, Aug 21 Delivery charge $20 </button>
             </div>
             <!-- configurations part end -->
 
@@ -57,26 +57,27 @@
               </div>
               <div class=" ps-3 d-flex justify-content-between align-items-center mt-3 price-box">
                 <h4>Extra Memory Cost</h4>
-                <h4>$0</h5>
+                <h4>$<span id="memory-cost">0</span></h5>
               </div>
               <div class=" ps-3 d-flex justify-content-between align-items-center mt-3 price-box">
                 <h4>Extra Storage Cost</h4>
-                <h4>$0</h5>
+                <h4>$<span id="storage-cost">0</span></h5>
               </div>
               <div class=" ps-3 d-flex justify-content-between align-items-center mt-3 price-box">
                 <h4>Delivery charge</h4>
-                <h4>$0</h5>
+                <h4>$<span id="delivery-cost">0</span></h5>
               </div>
               <div class=" ps-3 d-flex justify-content-between align-items-center mt-3 price-box">
                 <h4>Total Price</h4>
-                <h4>$1299</h5>
+                <h4>$<span id="total-price">1299</span></h5>
               </div>
               
 
               <h5 class="mt-5">Add Promo code</h5>
               <form class="d-flex">
-                <input class="form-control" type="text" aria-label="Search">
-                <a class="btn-danger text-decoration-none btn fs-5">Apply</a>
+                <input id="promo-input" class="form-control" type="text">
+                <a onclick="promo()" class="btn-danger btn fs-5">Apply</a>
+                <!-- <button id="promo-btn">Apply</button> -->
               </form>
             </div>
             <!-- pricing part end -->
@@ -92,7 +93,7 @@
     <footer>
       <section class="container text-center">
         <hr>
-        <h1>Total: $1299</h1>
+        <h1>Total: $<span id="total-cost">1299</span></h1>
       </section>
     </footer>
     <!-- footer part end -->
