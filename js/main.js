@@ -3,15 +3,19 @@ function getMemory(memory){
 const memoryCost = document.getElementById('memory-cost');
 memoryCost.innerText = memory;
 const memoryPrice = memoryCost.innerText;
+return memoryPrice;
 };
-
 
 document.getElementById('memory1').addEventListener('click', function(){
   getMemory(0);
+  updateTotal()
+
 });
 
 document.getElementById('memory2').addEventListener('click', function(){
   getMemory(180);
+  updateTotal()
+
 });
 
 // storage part start
@@ -24,14 +28,20 @@ function getStorage(storage){
   
 document.getElementById('storage1').addEventListener('click', function(){
 getStorage(0);
+updateTotal()
+
 });
 
 document.getElementById('storage2').addEventListener('click', function(){
   getStorage(100);
+  updateTotal()
+
 });
 
 document.getElementById('storage3').addEventListener('click', function(){
   getStorage(180);
+  updateTotal()
+
 });
 
 
@@ -41,23 +51,34 @@ function getDelivery(delivery){
   deliveryCost.innerText = delivery;
   const deliveryPrice = deliveryCost.innerText;
   return deliveryPrice;
+  
   }
   
 document.getElementById('delivery1').addEventListener('click', function(){
   getDelivery(0);
+  updateTotal()
+
 });
 document.getElementById('delivery2').addEventListener('click', function(){
   getDelivery(20);
+  updateTotal()
 });
 
 
 // total part
-const memoryTotal = getMemory(memoryPrice);
-console.log(memoryTotal);
-const totalPrice = document.getElementById('total-price');
-const totalAmount = parseFloat(totalPrice.innerText);
-console.log(totalAmount);
 
+function updateTotal(){
+  const totalPrice = document.getElementById('total-price');
+  const totalAmount = parseFloat(totalPrice.innerText);
+  const totalMemory = document.getElementById('memory-cost');
+  const totalMemoryAmount = parseFloat(totalMemory.innerText);
+  const totalStorage = document.getElementById('storage-cost');
+  const totalStorageAmount = parseFloat(totalStorage.innerText);
+  const totalDelivery = document.getElementById('delivery-cost');
+  const totalDeliveryAmount = parseFloat(totalDelivery.innerText);
+
+   totalPrice.innerText = totalAmount + totalMemoryAmount + totalStorageAmount + totalDeliveryAmount;
+}
 
 
 // promo part with onclick 
@@ -67,7 +88,6 @@ function promo(){
   const totalCost = document.getElementById('total-cost');
   const totalCostTextAfterPromo = totalCost.innerText;
   const totalCostAfterPromo = parseFloat(totalCostTextAfterPromo);
-  console.log(totalCost)
   if(promoCode == 'stevekaku'){
     promoInput.value = '';
     const totalDiscount = totalCostAfterPromo / 20;
